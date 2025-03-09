@@ -4,13 +4,18 @@ extends Node2D
 var max_angulo = 60.0  # Ángulo máximo a la izquierda y derecha
 var velocidad_base = 500.0  # Velocidad de rotación (grados por segundo)
 var distancia_maxima = 100.0  # Distancia máxima desde el centro que afecta la velocidad
+var is_balanced = false  # Bool que indica si la imagen está balanceada
+var angulo_balanced = 20.0
+
+# Señal para notificar cambios en is_balanced
+signal balance_changed(is_balanced: bool)
 
 # Estado actual
 var angulo_actual: float = 0.0  # Ángulo de la imagen
 var direccion_rotacion: int = 0  # Dirección de rotación: -1 = izquierda, 1 = derecha
 
-
 @onready var imagen: Sprite2D = $test
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,13 +32,7 @@ func _input(event):
 
 		# Determinar la mitad de la pantalla
 		var mitad_pantalla = get_viewport().size.x / 2
-
-		# Si el mouse está en la mitad izquierda de la pantalla
-		if mouse_pos < mitad_pantalla:
-			direccion_rotacion = -1  # Hacia la izquierda
-		# Si el mouse está en la mitad derecha de la pantalla
-		elif mouse_pos > mitad_pantalla:
-			direccion_rotacion = 1  # Hacia la derecha
+		direccion_rotacion = -1 if mouse_pos < mitad_pantalla else 1
 
 
 func _process(delta):
@@ -57,3 +56,14 @@ func _process(delta):
 
 	# Aplicar la rotación a la imagen
 	imagen.rotation_degrees = angulo_actual
+	
+	# Actualizar el estado de is_balanced
+	var estaba_balanceado = is_balanced
+	is_balanced = angulo_actual > -angulo_balanced and angulo_actual < angulo_balanced
+
+	# Emitir señal si el estado cambia
+	if is_balanced != estaba_balanceado:
+		emit_signal("balance_changed", is_balanced)
+
+	# Cambiar color según estado
+	imagen.modulate = Color(1, 0, 0) if is_balanced else Color(0, 0, 1)

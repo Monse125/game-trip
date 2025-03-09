@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1ani538kqlvg"]
+
+[ext_resource type="Script" path="res://scenes/game/mono.gd" id="1_k84a2"]
+[ext_resource type="Texture2D" uid="uid://c00logkblqr2r" path="res://icon.svg" id="2_hfvwo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jwes"]
+size = Vector2(117, 119)
+
+[node name="Mono" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_k84a2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.490196, 0.552941, 0, 1)
+texture = ExtResource("2_hfvwo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6jwes")

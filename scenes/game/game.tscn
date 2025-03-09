@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb78y3xy3j0ia"]
+
+[ext_resource type="Script" path="res://scenes/game/game.gd" id="1_40oo7"]
+[ext_resource type="PackedScene" uid="uid://bgm5rtcv4emwq" path="res://scenes/game/balanceo.tscn" id="1_a2wq8"]
+[ext_resource type="PackedScene" uid="uid://dw1y05yk2nnoe" path="res://scenes/game/tiempo.tscn" id="2_bok2d"]
+[ext_resource type="PackedScene" uid="uid://c1ani538kqlvg" path="res://scenes/game/mono.tscn" id="4_kcoiu"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_40oo7")
+
+[node name="balanceo" parent="." instance=ExtResource("1_a2wq8")]
+
+[node name="Tiempo" parent="." instance=ExtResource("2_bok2d")]
+
+[node name="Mono" parent="." instance=ExtResource("4_kcoiu")]
+position = Vector2(200, 194)

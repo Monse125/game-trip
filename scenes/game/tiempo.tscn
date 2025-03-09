@@ -11,10 +11,10 @@ font_size = 50
 script = ExtResource("1_0fct0")
 
 [node name="Reloj" type="Label" parent="."]
-offset_left = 361.0
-offset_top = 205.0
-offset_right = 391.0
-offset_bottom = 238.0
+offset_left = 468.0
+offset_top = 64.0
+offset_right = 498.0
+offset_bottom = 97.0
 size_flags_horizontal = 4
 text = "H"
 label_settings = SubResource("LabelSettings_0mc58")
