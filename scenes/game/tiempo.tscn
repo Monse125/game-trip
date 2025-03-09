@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw1y05yk2nnoe"]
+
+[ext_resource type="Script" path="res://scenes/game/tiempo.gd" id="1_0fct0"]
+[ext_resource type="FontFile" uid="uid://b6jsuvuoukvnu" path="res://assets/fonts/UpheavalPro.otf" id="2_rwg6n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0mc58"]
+font = ExtResource("2_rwg6n")
+font_size = 50
+
+[node name="Tiempo" type="Node2D"]
+script = ExtResource("1_0fct0")
+
+[node name="Reloj" type="Label" parent="."]
+offset_left = 361.0
+offset_top = 205.0
+offset_right = 391.0
+offset_bottom = 238.0
+size_flags_horizontal = 4
+text = "H"
+label_settings = SubResource("LabelSettings_0mc58")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true

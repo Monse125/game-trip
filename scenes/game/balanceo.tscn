@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgm5rtcv4emwq"]
+
+[ext_resource type="Script" path="res://scenes/game/balanceo.gd" id="1_2ensp"]
+[ext_resource type="Texture2D" uid="uid://c00logkblqr2r" path="res://icon.svg" id="2_rhe2s"]
+
+[node name="balanceo" type="Node2D"]
+script = ExtResource("1_2ensp")
+
+[node name="test" type="Sprite2D" parent="."]
+position = Vector2(557, 248)
+texture = ExtResource("2_rhe2s")

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://4qo0twsnpsbc"]
+
+[ext_resource type="FontFile" uid="uid://b6jsuvuoukvnu" path="res://assets/fonts/UpheavalPro.otf" id="1_37716"]
+
+[resource]
+default_font = ExtResource("1_37716")
+default_font_size = 80
