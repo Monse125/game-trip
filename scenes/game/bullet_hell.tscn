@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgcjxjhewfk0b"]
+
+[ext_resource type="Script" path="res://scenes/game/bullet_hell.gd" id="1_boa5h"]
+[ext_resource type="PackedScene" uid="uid://c1ani538kqlvg" path="res://scenes/game/mono.tscn" id="1_llwui"]
+
+[node name="BulletHell" type="Node2D"]
+script = ExtResource("1_boa5h")
+
+[node name="Mono" parent="." instance=ExtResource("1_llwui")]

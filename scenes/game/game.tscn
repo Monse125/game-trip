@@ -3,14 +3,22 @@
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_40oo7"]
 [ext_resource type="PackedScene" uid="uid://bgm5rtcv4emwq" path="res://scenes/game/balanceo.tscn" id="1_a2wq8"]
 [ext_resource type="PackedScene" uid="uid://dw1y05yk2nnoe" path="res://scenes/game/tiempo.tscn" id="2_bok2d"]
-[ext_resource type="PackedScene" uid="uid://c1ani538kqlvg" path="res://scenes/game/mono.tscn" id="4_kcoiu"]
+[ext_resource type="PackedScene" uid="uid://bgcjxjhewfk0b" path="res://scenes/game/bullet_hell.tscn" id="4_t21jf"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_40oo7")
+
+[node name="PantallaNegra" type="ColorRect" parent="."]
+offset_left = -25.0
+offset_top = -20.0
+offset_right = 1178.0
+offset_bottom = 672.0
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="balanceo" parent="." instance=ExtResource("1_a2wq8")]
 
 [node name="Tiempo" parent="." instance=ExtResource("2_bok2d")]
 
-[node name="Mono" parent="." instance=ExtResource("4_kcoiu")]
-position = Vector2(200, 194)
+[node name="BulletHell" parent="." instance=ExtResource("4_t21jf")]

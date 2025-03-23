@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # Variables de configuración
-var velocidad = 200.0  # Velocidad de movimiento
+var velocidad = 500.0  # Velocidad de movimiento
 var is_sleep = false  # Estado para permitir movimiento
 
 # Referencia al sprite (opcional)

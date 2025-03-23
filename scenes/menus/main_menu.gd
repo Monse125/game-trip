@@ -11,7 +11,7 @@ func _ready() -> void:
 	button_exit.pressed.connect(_on_exit_pressed)
 
 func _on_start_pressed():
-	pass
+	get_tree().change_scene_to_file("res://scenes/game/game.tscn")
 	
 func _on_settings_pressed():
 	pass
